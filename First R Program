@@ -1,0 +1,20 @@
+myfunc=function(x){
+  range=max(x)-min(x)
+  return(range)
+}
+
+z=3:100
+myfunc(z)
+
+#----------------------------
+myfunc=function(x){
+  
+      if(class(x) %in% c("numeric","integer")){
+        return(max(x)-min(x))
+      }else{
+        print("vector is not of supported type")
+      }
+}
+
+myfunc(1:10)
+myfunc(rep("a",10))
