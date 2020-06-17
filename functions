@@ -1,0 +1,34 @@
+myfunc=function(x){
+  range=max(x)-min(x)
+  return(range)
+}
+
+z=3:100
+myfunc(z)
+
+#----------------------------
+myfunc=function(x){
+  
+      if(class(x) %in% c("numeric","integer")){
+        return(max(x)-min(x))
+      }else{
+        print("vector is not of supported type")
+      }
+}
+
+myfunc(1:10)
+myfunc(rep("a",10))
+
+#-----------------------------
+mysummary=function(x){
+  s1=min(x)
+  s2=max(x)
+  s3=mean(x)
+  s4=sd(x)
+  s5=median(x)
+  
+  summary=list(min=s1,max=s2,mean=s3,sd=s4,median=s5)
+  return(summary)
+}
+
+mysummary(2:90)
