@@ -1,0 +1,63 @@
+myfunc=function(x){
+  range=max(x)-min(x)
+  return(range)
+}
+
+z=3:100
+myfunc(z)
+
+#----------------------------
+myfunc=function(x){
+  
+      if(class(x) %in% c("numeric","integer")){
+        return(max(x)-min(x))
+      }else{
+        print("vector is not of supported type")
+      }
+}
+
+myfunc(1:10)
+myfunc(rep("a",10))
+
+#-----------------------------
+mysummary=function(x){
+  s1=min(x)
+  s2=max(x)
+  s3=mean(x)
+  s4=sd(x)
+  s5=median(x)
+  
+  summary=list(min=s1,max=s2,mean=s3,sd=s4,median=s5)
+  return(summary)
+}
+
+mysummary(2:90)
+
+t=mysummary(2:90)
+t$mean
+t$max
+t$sd
+
+mymeans=function(d)
+{
+  means=numeric(ncol(d))
+  for(i in 1:ncold(d)){
+    means[i]=mean(d[,i])
+  }
+  return(means)
+}
+
+mymeans(mtcars)
+
+#--------------------------
+
+newfunction=function(x=1:10,y=1){
+  x=x*y
+  range=max(x)-min(x)
+  return(range)
+}
+
+newfunction()  #here we are not passing values of x and y, so it will take its default value.
+newfunction(y=5)
+newfunction(x=3:79)
+newfunction(2:20,4) #this is same as newfunction(x=2:20,y=4)
